@@ -1,0 +1,4 @@
+export const UI_ACTIONS = {
+  UI_OPEN_MODAL: "[UI | OPEN MODAL]",
+  UI_CLOSE_MODAL: "[UI | CLOSE MODAL]",
+};
