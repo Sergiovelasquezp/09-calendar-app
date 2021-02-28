@@ -14,16 +14,29 @@ body {
   height: 100%;
 }
 
-.fab {
-  border-radius: 100%;
+.fab-add {
+  border-radius: 50%;
   bottom: 25px;
   font-size: 30px;
   outline: none;
-  padding: 25px;
   position: fixed;
   right: 25px;
 }
-.fab:active {
+.fab-add:active {
   border: none;
   outline: none;
+}
+
+.fab-delete {
+  bottom: 25px;
+  font-size: 16px;
+  /* font-weight: bold; */
+  left: 60px;
+  outline: none;
+  position: fixed;
+  /* right: 25px; */
+}
+
+.fab-delete i {
+  margin-right: 7px;
 }
