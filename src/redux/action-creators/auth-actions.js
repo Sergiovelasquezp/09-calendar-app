@@ -62,6 +62,21 @@ export const authRenewToken = () => {
     const res = await fetchWithToken('auth/renew');
     const renewTokenResult = await res.json();
     console.log('renewTokenResult', renewTokenResult);
-    // setTokenAndUser()
+    if ('data' in renewTokenResult)
+      return await setTokenAndUser(renewTokenResult.data, dispatch);
+    return dispatch(authFinishChecking());
   };
 };
+
+const authFinishChecking = () => ({
+  type: AUTH_ACTIONS.AUTH_FINISH_CHECKING,
+});
+
+export const authLogOutAndDestroySession = () => {
+  return async (dispatch) => {
+    localStorage.clear();
+    dispatch(logout());
+  };
+};
+
+const logout = () => ({ type: AUTH_ACTIONS.AUTH_ON_LOGOUT });
